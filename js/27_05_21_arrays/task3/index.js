@@ -9,7 +9,7 @@
 //1. create new array
 //2.iterate arry, apply callback for each element
 //3. if - true, push result to new arr
-//4.
+
 
 const filterArrayElements = (arr, callback) => {
   // put you code here
