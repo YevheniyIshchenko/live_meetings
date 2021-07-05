@@ -68,3 +68,15 @@ console.log(user3);
 const user4 = { name: 'Test', surname: 'Petrova', address: 'Kyiv' };
 console.log(addPropertyV3(user4, 'address', 'Lviv'));
 console.log(user4);
+
+console.log('========================');
+//V4
+function addPropertyV4(obj, key, value) {
+  const newObj = { ...obj, [key]: value };
+  return newObj;
+}
+
+// test data
+const user5 = { name: 'Boba', surname: 'Petrova', address: 'Kyiv' };
+console.log(addPropertyV4(user5, 'address', 'Lviv'));
+console.log(user5);
