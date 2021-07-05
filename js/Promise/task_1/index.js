@@ -15,15 +15,13 @@ const submitHendler = (event) => {
   fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json;',
     },
     body: JSON.stringify(getFormData()),
   })
+    .then((response) => response.json())
     .then((response) => {
-      response.json();
-    })
-    .then((result) => {
-      alert(JSON.stringify(result));
+      alert(JSON.stringify(response));
       formElement.reset();
     })
     .catch(() => {
