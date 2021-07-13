@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import Login from './Login.jsx';
 import Logout from './Logout.jsx';
@@ -11,7 +12,7 @@ import Spinner from './Spinner.jsx';
 
 class Auth extends React.Component {
   state = {
-    isLoggedIn: false,
+    isLoggedIn: true,
     isLogging: false,
   };
 
@@ -21,27 +22,34 @@ class Auth extends React.Component {
     });
 
     setTimeout(() => {
-      this.setState(
-        {
-          isLoggedIn: true,
-          isLogging: false,
-        },
-        2000
-      );
-    });
+      this.setState({
+        isLoggedIn: false,
+        isLogging: false,
+      });
+    }, 2000);
   };
 
   onLogout = () => {
-
+    this.setState({
+      isLoggedIn: true,
+    });
   };
+  // available = () => {
+
+  // }
 
   render() {
-    return (
-      <>
+    // if (this.state.isLogging) {
+    //   return <Spinner size={20} />;
+    // }
+    return this.state.isLoggedIn ? (
+      this.state.isLogging ? (
+        <Spinner size={20} />
+      ) : (
         <Login onLogin={this.onLogin} />
-        <Logout name={this.onLogout} />
-        {/* <Spinner size={20} /> */}
-      </>
+      )
+    ) : (
+      <Logout onLogout={this.onLogout} />
     );
   }
 }
