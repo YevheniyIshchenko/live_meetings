@@ -42,7 +42,7 @@ class UsersList extends React.Component {
           goPrev={this.goPrev}
           goNext={this.goNext}
           currentPage={currentPage}
-          usersLenght={users.length}
+          totalItems={users.length}
         />
         <ul className="users">
           {usersToDisplay.map(({ id, name, age }) => (

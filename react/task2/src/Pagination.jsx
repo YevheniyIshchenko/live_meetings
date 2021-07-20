@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Pagination = ({ goPrev, goNext, currentPage, usersLenght }) => {
+const Pagination = ({ goPrev, goNext, currentPage,  totalItems }) => {
   // input : currentPage, itemsPerPage, UsersCounts
   // output ; boolean
   const isShowFirstPageBtn = currentPage === 1;
-  const isShowLastPageBtn = currentPage * 3 >= usersLenght;
+  const isShowLastPageBtn = currentPage * 3 >= totalItems;
   return (
     <div className="pagination">
       <button className="btn" onClick={goPrev} disabled={isShowFirstPageBtn}>
